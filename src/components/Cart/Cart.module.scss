@@ -1,0 +1,137 @@
+.cart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.side {
+  width: 385px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  & h2 {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+  }
+
+  & button {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border: 1px solid #DBDBDB;
+    border-radius: 8px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.card {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #F3F3F3;
+  border-radius: 20px;
+
+  &Image {
+    width: 70px;
+    height: 70px;
+  }
+
+  &Header {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 17px;
+
+    &Title {
+      font-weight: 400;
+    }
+
+    &Price {
+      font-weight: 700;
+    }
+  }
+}
+
+.deleteBtn {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border: 1px solid #DBDBDB;
+  border-radius: 8px;
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &Wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &Item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+
+    & span:nth-child(2) {
+      flex: 1;
+      border-bottom: 1px dashed #DFDFDF;
+      margin-inline: 8px;
+    }
+
+    & span:nth-child(3) {
+      font-weight: 700;
+    }
+  }
+
+  &SendBtn {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 0;
+    height: 55px;
+    background-color: #9DD558;
+    border-radius: 18px;
+    color: white;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 600;
+  }
+}
