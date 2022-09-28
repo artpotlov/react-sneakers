@@ -1,4 +1,23 @@
-body {
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E7F6FF;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+main {
+  max-width: 1080px;
+  margin-inline: auto;
+  background-color: #fff;
 }

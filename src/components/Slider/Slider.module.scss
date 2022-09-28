@@ -1,0 +1,42 @@
+.slider {
+  position: relative;
+  padding: 45px 60px 0 60px;
+}
+
+.button {
+  position: absolute;
+  border-radius: 9999px;
+  background-color: #fff;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #C8C8C8;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+
+  &Left {
+    composes: button;
+    top: 50%;
+    left: calc(60px - 35px / 2);
+    display: none;
+  }
+
+  &Right {
+    composes: button;
+    top: 50%;
+    right: calc(60px - 35px / 2);
+  }
+}
+
+.track {
+  overflow: hidden;
+  width: auto;
+  height: 300px;
+
+  & img {
+    width: 960px;
+    height: 300px;
+  }
+}
