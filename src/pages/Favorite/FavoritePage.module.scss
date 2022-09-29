@@ -1,0 +1,34 @@
+.cards {
+  padding: 45px 60px 0 60px;
+}
+
+.header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  &Title {
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 700;
+  }
+
+  &BackBtn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.empty {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.items {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}

@@ -1,0 +1,73 @@
+.card {
+  background-color: #fff;
+  border: 1px solid #F3F3F3;
+  border-radius: 40px;
+  position: relative;
+  padding: 20px 29px 35px 30px;
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow .3s;
+
+  &:hover {
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.favoriteBtn {
+  border: 0;
+  cursor: pointer;
+  background: none;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.image {
+  width: 100%;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.title {
+  display: block;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &PriceBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    &Title {
+      font-size: 11px;
+      line-height: 13px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #BDBDBD;
+    }
+
+    &Total {
+      font-weight: 700;
+    }
+  }
+
+  &AddBtn {
+    cursor: pointer;
+    background: none;
+    border: 0;
+    width: 32px;
+    height: 32px;
+  }
+}
