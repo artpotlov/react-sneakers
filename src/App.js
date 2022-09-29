@@ -97,10 +97,7 @@ function App() {
       setCartItems,
       isLoadingGoods,
     }}>
-      {
-        isShowCart &&
-        <Cart/>
-      }
+      <Cart isOpened={isShowCart}/>
       <Header/>
       <main>
         <Outlet/>

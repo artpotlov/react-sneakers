@@ -42,10 +42,15 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    transition: background-color .3s;
+
+    img {
+      transition: transform .2s ease-in-out;
+    }
 
     &:hover {
-      background-color: #91CE44;
+      img {
+        transform: translateX(-10px);
+      }
     }
   }
 }

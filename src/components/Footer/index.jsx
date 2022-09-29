@@ -2,7 +2,10 @@ import styles from './Footer.module.scss';
 
 function Footer() {
   return (
-    <footer className={styles.footer}>Copyright 2022</footer>
+    <footer className={styles.footer}>
+      <a href="https://github.com/artpotlov/react-sneakers">GitHub</a>
+      <span>© 2022</span>
+    </footer>
   );
 }
 
