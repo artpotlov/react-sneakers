@@ -2,62 +2,45 @@ import styles from './Cart.module.scss';
 import {useContext, useState} from "react";
 import {AppContext} from "../../context";
 import Info from "../Info/Info";
+import CustomCard from "./CustomCard";
 
-function Cart() {
+function Cart({isOpened}) {
   const {
     toggleShowCart: closeCart,
     cartItems: items,
-    deleteFromCart: deleteItem,
     totalPrice,
     setCartItems
   } = useContext(AppContext);
   const [isOrder, setOrder] = useState(false);
-  document.body.style.overflow = 'hidden';
+  isOpened ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto';
 
   return (
-    <div className={styles.cart}>
-      <div className={styles.side}>
+    <div className={`${styles.cart} ${isOpened ? styles.cartVisible : ''}`}>
+      <div className={`${styles.side} ${isOpened ? styles.sideVisible : ''}`}>
         <div className={styles.header}>
           <h2>Корзина</h2>
-          <button className={styles.deleteBtn} onClick={() => {
+          <button className={styles.closeBtn} onClick={() => {
             closeCart();
             document.body.style.overflow = 'auto';
-          }}>×
+          }}>
+            <img src="/assets/icons/close.svg" alt="Закрыть корзину"/>
           </button>
         </div>
         <div className={styles.cards}>
           {
-            (!!items.length && !isOrder) && items.map(item => {
-              return (
-                <div className={styles.card} key={item.id}>
-                  <img src={item.img} alt={item.title} className={styles.cardImage}/>
-                  <div className={styles.cardHeader}>
-                <span className={styles.cardHeaderTitle}>
-                  {item.title}
-                </span>
-                    <span className={styles.cardHeaderPrice}>{item.price} руб.</span>
-                  </div>
-                  <button className={styles.deleteBtn} onClick={() => deleteItem(item)}>×</button>
-                </div>
-              );
-            })
+            (!!items.length && !isOrder) && items.map(item => <CustomCard key={item.id} val={item}/>)
           }
           {
             (!items.length && !isOrder) &&
             <Info img="/assets/imgs/cart/empty.jpg" title="Корзина пустая"
                   text="Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
-                  onClickBtn={() => {
-                    document.body.style.overflow = 'auto';
-                    closeCart();
-
-                  }}/>
+                  onClickBtn={closeCart}/>
           }
           {
             isOrder &&
             <Info img="/assets/imgs/cart/order.jpg" title="Заказ оформлен"
                   text="Ваш заказ скоро будет передан курьерской доставке"
                   onClickBtn={() => {
-                    document.body.style.overflow = 'auto';
                     closeCart();
                     setOrder(false);
                   }}/>
