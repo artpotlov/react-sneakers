@@ -10,8 +10,8 @@ function Info({img, title, text, onClickBtn = null}) {
       <p>{text}</p>
       {
         !onClickBtn && <Link to="/">
-          <img src="/assets/icons/arrow-left.svg" alt="Вернуться назад"/>
-          <span>Вернуться на главную</span>
+          <img src="/assets/icons/arrow-left.svg" alt="На главную"/>
+          <span>На главную</span>
         </Link>
       }
       {
